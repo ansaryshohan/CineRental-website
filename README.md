@@ -44,9 +44,9 @@ ___
 
 ### the Image url getter utility function is also implemented here. how to use
 
-*we need to have the image name in the database
-*the same image name file needs to be in the assets folder of the src file.
-*when we need the image we need to call the utility function with the image name from the data.
+* we need to have the image name in the database
+* the same image name file needs to be in the assets folder of the src file.
+* when we need the image we need to call the utility function with the image name from the data.
 
 ```js
 

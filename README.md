@@ -1,4 +1,4 @@
-# Movie Rent live site [cineRent website](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) 
+# Movie Rent live site [cineRent website](https://cine-rental-website.vercel.app/)
 
 ## here the Rating component and the image url getter function is done properly.
 

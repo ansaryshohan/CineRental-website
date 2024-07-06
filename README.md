@@ -4,6 +4,7 @@
 
 * this is a demo site for cinema rental
 * we ne rent any cinema from the site
+* DarkMode is implemented with the help of tailwind .
 * there we used the rating component which will give stars for any number of 1-5.
 * the imageName coming from data. how can we show it properly
 * the modals are practices properly.

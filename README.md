@@ -9,10 +9,17 @@
 * the modals are practices properly.
 * contextApi is used properly from react.
 
-
+___
 
 
 ### the rating component code:
+
+* we have to pass a prop name starCount with the given star number.
+* the component will get the number after point and make it two digit number.
+* it will calculate the celi value of the number. 
+* the it will make a array of [1,2,3,4,5] and do map function on it
+* then the logic of giving full star/half star/empty star is implemented.
+* react icons package needs to be installed. and the components for icons needs to be imported. 
 
 ```js
 const Rating = ({ starCount }) => {

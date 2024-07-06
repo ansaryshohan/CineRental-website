@@ -7,7 +7,7 @@
 
 ### the rating component code:
 
-```react
+```js
 const Rating = ({ starCount }) => {
   const numberAfterPoint = Number(starCount.toFixed(2).split(".")[1]);
   const ceilNumber = Math.ceil(Number(starCount.toFixed(2)));

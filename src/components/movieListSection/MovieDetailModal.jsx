@@ -1,6 +1,7 @@
 import { getMovieCoverImageURL } from "../../utils/getMovieImageURL";
+import tagIcon from "../../assets/tag.svg"
 
-const MovieDetailModal = ({ selectedMovie, onModalClose }) => {
+const MovieDetailModal = ({ selectedMovie, onModalClose,onCartDataAdd }) => {
   return (
     <div
       className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm"
@@ -33,8 +34,9 @@ const MovieDetailModal = ({ selectedMovie, onModalClose }) => {
               <a
                 className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
                 href="#"
+                onClick={(e)=>onCartDataAdd(e, selectedMovie)}
               >
-                <img src="./assets/tag.svg" alt="" />
+                <img src={tagIcon} alt=" tag icon" />
                 <span>{selectedMovie.price} | Add to Cart</span>
               </a>
               <a

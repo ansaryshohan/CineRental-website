@@ -2,10 +2,13 @@ import { useState } from "react";
 import { getMovieCoverImageURL } from "../../utils/getMovieImageURL";
 import MovieDetailModal from "./MovieDetailModal";
 import Rating from "./Rating";
+import useMovieContext from "../../hooks/useMovieContext";
+import tagIcon from "../../assets/tag.svg"
 
 const SingleMovieCard = ({ movieData }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const {cartMovieData,setCartMovieData} = useMovieContext()
 
   const handleModalOpen = (movie) => {
     setShowModal(true);
@@ -16,12 +19,20 @@ const SingleMovieCard = ({ movieData }) => {
     setShowModal(false);
     setSelectedMovie(null);
   };
+  const handleCartData=(event,movie)=>{
+    event.stopPropagation();
+    const isExisting= cartMovieData.find(cartMovie=>cartMovie.id===movie.id)
+    if(!isExisting){
+      setCartMovieData([...cartMovieData,movie])
+    }
+  }
   return (
     <>
       {showModal && (
         <MovieDetailModal
           selectedMovie={selectedMovie}
           onModalClose={handleModalClose}
+          onCartDataAdd={handleCartData}
         />
       )}
       <figure
@@ -44,8 +55,9 @@ const SingleMovieCard = ({ movieData }) => {
             <a
               className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
               href="#"
+              onClick={(e)=>handleCartData(e,movieData)}
             >
-              <img src="./assets/tag.svg" alt="" />
+              <img src={tagIcon} alt="tag icon" />
               <span>{movieData.price} | Add to Cart</span>
             </a>
           </figcaption>

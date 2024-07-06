@@ -1,7 +1,13 @@
 # Movie Rent live site [cineRent website](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) 
 
-the rating component code
-```
+## here the Rating component and the image url getter function is done properly.
+
+
+
+
+### the rating component code:
+
+```react
 const Rating = ({ starCount }) => {
   const numberAfterPoint = Number(starCount.toFixed(2).split(".")[1]);
   const ceilNumber = Math.ceil(Number(starCount.toFixed(2)));
